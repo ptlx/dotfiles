@@ -68,8 +68,14 @@ packadd vim-jetpack
 call jetpack#begin()
 Jetpack 'tani/vim-jetpack', {'opt': 1}
 Jetpack 'easymotion/vim-easymotion'
+Jetpack 'morhetz/gruvbox'
 call jetpack#end()
 
 " plugin key map
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" colorscheme
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_dark = 'hard'
