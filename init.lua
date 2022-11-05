@@ -85,16 +85,10 @@ map('v', '<Right>', '<None>')
 -- plugin
 
 vim.cmd('packadd vim-jetpack')
-require('jetpack').startup(function(use)
-  use { 'tani/vim-jetpack', opt = 1 }
-  use { 'easymotion/vim-easymotion' }
-  use { 'morhetz/gruvbox' }
-  use { 'neovim/nvim-lspconfig' }
-  use { 'williamboman/mason.nvim' }
-  use { 'williamboman/mason-slpconfig.nvim' }
-  use { 'hrsh7th/nvim-cmp' }
-  use { 'hrsh7th/cmp-nvim-lsp' }
-  use { 'hrsh7th/vim-vsnip' }
+require('jetpack.packer').startup(function(use)
+	use { 'tani/vim-jetpack', opt = 1 }
+	use { 'easymotion/vim-easymotion' }
+	use { 'morhetz/gruvbox' }
 end)
 
 -- plugin key map
