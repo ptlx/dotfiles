@@ -79,3 +79,7 @@ nmap <Leader>f <Plug>(easymotion-overwin-f)
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark = 'hard'
+highlight Normal ctermbg=NONE
+highlight NonText ctermbg=NONE
+highlight SpecialKey ctermbg=NONE
+highlight EndOfBuffer ctermbg=NONE
