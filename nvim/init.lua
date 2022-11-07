@@ -67,6 +67,9 @@ map('n', 'U', '<C-r>')
 map('n', '+', '<C-a>')
 map('n', '-', '<C-x>')
 map('n', '<C-a>', 'gg<S-v>G')
+map('n', 'te', ':tabedit<CR>', { silent = true })
+map('n', '<Tab>', 'gt', { silent = true })
+map('n', '<S-Tab>', 'gT', { silent = true })
 
 -- required
 map('n', '<Left>', '<C-w>h')
