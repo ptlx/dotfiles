@@ -11,6 +11,6 @@ folder (installers file is excluded.) and run it.
 ## Installation
 
 ```shell
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ptlx/dotfiles/master/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ptlx/dotfiles/master/installer.sh)"
 ```
 
