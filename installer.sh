@@ -3,7 +3,7 @@
 DOT_DIR = "$HOME/dotfiles"
 
 has() {
-    type "$1" > /dev/null 2 > &1;
+    type "$1" > /dev/null 2>&1;
 }
 
 if [ ! -d ${DOT_DIR} ]; then
