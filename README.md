@@ -10,7 +10,7 @@ directory (installers file is excluded.) and run it.
 
 ### why
 
-`installer.sh` script find files and directories using for. script move to every 
+`installer.sh` script find files and directories using `for`. script move to every 
 folder except **installers** and execute `bash link.sh` and `bash init.sh`
 
 
