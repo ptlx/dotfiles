@@ -106,12 +106,14 @@ require('jetpack.packer').startup(function(use)
 	use { 'ray-x/lsp_signature.nvim' }-- LSP cmp powerfull gui
 	use { 'onsails/lspkind.nvim' }-- LSP cmp icon
 	use { 'j-hui/fidget.nvim' }-- LSP show running progress
+	use { 'sudormrfbin/cheatsheet.nvim' }
 end)
 
 ---- hop.nvim
 
 local hopStatus, hop = pcall(require, "hop")
 if (not hopStatus) then return end
+	
 
 hop.setup()
 
