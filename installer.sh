@@ -47,4 +47,5 @@ do
 
 	cd "${DOT_DIR}/${f}"
 	bash link.sh
+    fi
 done
