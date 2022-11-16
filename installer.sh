@@ -34,10 +34,6 @@ git -C $(brew --repo homebrew/core) checkout master
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# install requirements
-sudo apt update
-sudo apt install ripgrep -y
-
 # run link.sh in respective directory
 for f in *
 do
@@ -46,6 +42,7 @@ do
 	[[ "$f" == "installers" ]] && continue
 
 	cd "${DOT_DIR}/${f}"
+    bash installer.sh
 	bash link.sh
     fi
 done
