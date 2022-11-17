@@ -37,7 +37,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # run link.sh in respective directory
 for f in *
 do
-    if [ -f $f ] ; then
+    if [ -d $f ] ; then
 	# directory of installer files is excluded
 	[[ "$f" == "installers" ]] && continue
 
