@@ -1,10 +1,13 @@
 FROM ubuntu:20.04
 
+ENV TZ=Asia/Tokyo
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 ARG USERNAME=ptlx
 
 RUN apt-get update \
     && apt-get dist-upgrade -y \
-    && apt-get install -y sudo git zsh software-properties-common build-essential curl file python-setuptools ruby \
+    && apt-get install -y sudo git bash software-properties-common build-essential curl file python-setuptools ruby \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get install -y curl
 
