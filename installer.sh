@@ -1,8 +1,8 @@
 #!/bin/bash
 
-DOT_DIR = "$HOME/dotfiles"
+DOT_DIR="$HOME/dotfiles"
 
-has() {
+function has () {
     type "$1" > /dev/null 2>&1;
 }
 
