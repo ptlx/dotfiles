@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  dotfiles:
+    image: ptlx_dotfiles
+  build:
+    context: .
+    container_name: ptlx_dotfiles_container
+    hostname: ptlx-dotfiles
+  command: bash installer.sh
