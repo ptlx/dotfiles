@@ -29,20 +29,24 @@ else
 fi
 
 # install brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-git -C $(brew --repo homebrew/core) checkout master
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
+
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+git -C $(brew --repo homebrew/core) checkout master
+
 
 # run link.sh in respective directory
 for f in *
 do
     if [ -d $f ] ; then
-	# directory of installer files is excluded
-	[[ "$f" == "installers" ]] && continue
+        # exclude that do not have installer.sh and link.sh
+        [[ "$f" == "installers" ]] && continue
+        [[ "$f" == ".github" ]] && continue
+        [[ "$f" == "docker" ]] && continue
 
-	cd "${DOT_DIR}/${f}"
-    bash installer.sh
-	bash link.sh
+        cd "${DOT_DIR}/${f}"
+        . installer.sh
+        . link.sh
     fi
 done
