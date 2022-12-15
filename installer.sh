@@ -2,6 +2,7 @@
 
 DOT_DIR="$HOME/dotfiles"
 cd "${DOT_DIR}/${f}"
+bash welcome.sh
 
 function has () {
     type "$1" > /dev/null 2>&1;
