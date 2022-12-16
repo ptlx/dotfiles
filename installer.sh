@@ -1,8 +1,10 @@
 #!/bin/bash
 
-DOT_DIR = "$HOME/dotfiles"
+DOT_DIR="$HOME/dotfiles"
+cd "${DOT_DIR}"
+bash welcome.sh
 
-has() {
+function has () {
     type "$1" > /dev/null 2>&1;
 }
 
@@ -29,20 +31,21 @@ else
 fi
 
 # install brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-git -C $(brew --repo homebrew/core) checkout master
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
+
+echo '# Set PATH, MANPATH, etc., for Homebrew.' >> $HOME/.bash_profile
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+git -C $(brew --repo homebrew/core) checkout master
 
 # run link.sh in respective directory
 for f in *
 do
     if [ -d $f ] ; then
-	# directory of installer files is excluded
-	[[ "$f" == "installers" ]] && continue
-
-	cd "${DOT_DIR}/${f}"
-    bash installer.sh
-	bash link.sh
+        # exclude that do not have installer.sh and link.sh
+        [[ ! -f "${DOT_DIR}/${f}/installer.sh" ]] && continue
+        [[ ! -f "${DOT_DIR}/${f}/link.sh" ]] && continue
+        . "${DOT_DIR}/${f}/installer.sh"
+        . "${DOT_DIR}/${f}/link.sh"
     fi
 done

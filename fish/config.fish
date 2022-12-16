@@ -11,3 +11,4 @@ function fish_user_key_bindings
 end
 
 bind \cd 'exit'
+fish_add_path /home/linuxbrew/.linuxbrew/bin

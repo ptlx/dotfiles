@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  dotfiles:
+    build:
+      context: ./
+      dockerfile: ./docker/dotfiles/Dockerfile
+    command: sudo bash installer.sh
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    tty: true

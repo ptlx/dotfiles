@@ -1,17 +1,8 @@
 # dotfiles
 
-## Temporary specification
+![image](https://user-images.githubusercontent.com/64892129/207911531-ea40164f-0ff5-4737-b4ef-ae20cff745fc.png)
 
-This includes **installers directory** and **other directories**.
-Installers directory consists of each installer file.
-Others consist of init.sh, link.sh and other configuration files because
-main installer (`dotfiles/installer.sh`) find installer.sh and link.sh in every
-directory (installers file is excluded.) and run it.
 
-### why
-
-`installer.sh` script find files and directories using `for`. script move to every
-folder except **installers** and execute `bash link.sh` and `bash installer.sh`
 
 ## Installation
 
