@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOT_DIR="$HOME/dotfiles"
-cd "${DOT_DIR}/${f}"
+cd "${DOT_DIR}"
 bash welcome.sh
 
 function has () {
@@ -33,7 +33,7 @@ fi
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
 
-echo '# Set PATH, MANPATH, etc., for Homebrew.' >> /home/hec/.bash_profile
+echo '# Set PATH, MANPATH, etc., for Homebrew.' >> $HOME/.bash_profile
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 git -C $(brew --repo homebrew/core) checkout master
@@ -43,13 +43,9 @@ for f in *
 do
     if [ -d $f ] ; then
         # exclude that do not have installer.sh and link.sh
-        [[ "$f" == "installers" ]] && continue
-        [[ "$f" == ".github" ]] && continue
-        [[ "$f" == "docker" ]] && continue
-
-        cd "${DOT_DIR}/${f}"
-        . installer.sh
-        . link.sh
+        [[ ! -f "${DOT_DIR}/${f}/installer.sh" ]] && continue
+        [[ ! -f "${DOT_DIR}/${f}/link.sh" ]] && continue
+        . "${DOT_DIR}/${f}/installer.sh"
+        . "${DOT_DIR}/${f}/link.sh"
     fi
-    cd "${DOT_DIR}"
 done
