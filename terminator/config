@@ -1,0 +1,49 @@
+[global_config]
+  window_state = maximise
+  borderless = True
+  sticky = True
+  title_transmit_fg_color = "#2E3440"
+  title_transmit_bg_color = "#88C0D0"
+  title_receive_fg_color = "#2E3440"
+  title_receive_bg_color = "#8FBCBB"
+  title_inactive_fg_color = "#D8DEE9"
+  title_inactive_bg_color = "#4C566A"
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.67
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = RictyDiminishedDiscord NF 10
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_system_font = False
+    copy_on_selection = True
+  [[nord]]
+    icon_bell = False
+    background_color = "#2E3440"
+    cursor_color = "#D8DEE9"
+    foreground_color = "#D8DEE9"
+    show_titlebar = False
+    palette = "#3b4252:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#88c0d0:#e5e9f0:#4c566a:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#8fbcbb:#eceff4"
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 74:27
+      maximised = True
+      fullscreen = False
+      size = 1366, 873
+      title = /bin/bash
+      last_active_term = 30fbcb2e-be94-4c9c-b63e-610d703fd3d4
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = nord
+      uuid = 30fbcb2e-be94-4c9c-b63e-610d703fd3d4
+[plugins]
