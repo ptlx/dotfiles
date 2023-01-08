@@ -5,7 +5,7 @@ services:
     build:
       context: ./
       dockerfile: ./docker/dotfiles/Dockerfile
-    command: sudo bash installer.sh
+    command: bash installer.sh
     volumes:
       - .:/workspace
     working_dir: /workspace

@@ -44,8 +44,8 @@ do
     if [ -d $f ] ; then
         # exclude that do not have installer.sh and link.sh
         [[ ! -f "${DOT_DIR}/${f}/installer.sh" ]] && continue
-        [[ ! -f "${DOT_DIR}/${f}/link.sh" ]] && continue
         . "${DOT_DIR}/${f}/installer.sh"
+        [[ ! -f "${DOT_DIR}/${f}/link.sh" ]] && continue
         . "${DOT_DIR}/${f}/link.sh"
     fi
 done
