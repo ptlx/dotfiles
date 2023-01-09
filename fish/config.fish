@@ -6,7 +6,7 @@ alias v "nvim"
 
 # cd
 alias d "cd ~/dotfiles"
-alias p "cd ~/projects"
+alias p "cd ~/program"
 alias .. "cd .."
 alias ... "cd ../.."
 alias .... "cd ../../.."
