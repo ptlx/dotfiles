@@ -1,8 +1,6 @@
 #!/bin/bash
 
 DOT_DIR="$HOME/dotfiles"
-cd "${DOT_DIR}"
-bash welcome.sh
 
 function has () {
     type "$1" > /dev/null 2>&1;
@@ -29,7 +27,8 @@ if [ ! -d ${DOT_DIR} ]; then
 else
     echo "dotfiles already exists"
 fi
-
+cd "${DOT_DIR}"
+bash welcome.sh
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
 
